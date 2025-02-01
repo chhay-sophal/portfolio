@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "type-check": "vue-tsc --noEmit",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "vue": "^3.5.13",
@@ -19,10 +20,12 @@
     "@types/node": "^22.10.7",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
+    "gh-pages": "^6.3.0",
     "npm-run-all2": "^7.0.2",
     "typescript": "~5.7.3",
     "vite": "^6.0.11",
     "vite-plugin-vue-devtools": "^7.7.0",
     "vue-tsc": "^2.2.0"
-  }
+  },
+  "homepage": "https://chhay-sophal.github.io/portfolio"
 }
